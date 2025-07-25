@@ -11,7 +11,7 @@ When we look at the present age, we see a __lot of articles__ and __reading mate
 
 When there are __millions of documents__ and __publications__ introduced, it is often not possible for an average reader to classify them based on their difficulty. This is because one would have to go over the materials fully and understand them before assigning the difficulty of the text. Therefore, we should think of ways in which we could automate this system which would classify the documents into categories.
 
-![](https://github.com/suhasmaddali/Images/blob/main/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg)
+![](https://github.com/sankethkaruturi/Images/blob/425e06b536903e87b90dae08dfb1575ec6269197/Readability_of_texts/ROTP.jpg)
 
 Since there are a lot of __publications__ and __articles__ being published every day, it sometimes becomes tedious and difficult for the __librarians__ to go over the materials and classify them based on their level of comprehension. As a result, a high-difficulty text might be given to a child who is just about 10 years of age. On the contrary, a low-difficulty text might be given to a highly educated individual who might easily understand the text but lacks much knowledge.
 
@@ -57,39 +57,39 @@ In this section, our primary focus is on the data and essential visualizations t
 
 Within the dataframe, we observe excerpts that include the actual output or difficulty level. The target variable in this context is the difficulty score assigned to each excerpt.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Input%20data%20head.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Input%20data%20head.jpg"/>
 
 In the dataset, we have identified some missing values in the features "url_legal" and "license." These two features have a minimal impact on the model's ability to predict difficulty scores. Therefore, we can safely eliminate them from our analysis.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Data%20missing%20values%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Data%20missing%20values%20plot.jpg"/>
 
 The histogram illustrates the distribution of difficulty scores, which are represented as normalized floating-point numbers. It provides an overview of how the different difficulty scores are spread across a range of values, indicating the overall concentration or frequency of each score.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Target%20output%20histogram%202.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Target%20output%20histogram%202.jpg"/>
 
 Wordcloud figures visually depict the prevalence of different words within a text corpus, with word size indicating their frequency of occurrence. In our specific corpus, we observe that common words like "one," "time," and "said" emerge as the most frequently used. This outcome is typically anticipated, as authors often employ the word "said" to attribute dialogue or conversations in novels or books.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Word%20distribution%20wordcloud.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Word%20distribution%20wordcloud.jpg"/>
 
 By incorporating a valuable set of features, we have successfully enhanced the predictive capabilities of our machine learning models. Notably, the pairplots have revealed a noteworthy pattern: the number of sentences significantly influences the difficulty score of the text. Specifically, as the number of sentences increases, the likelihood of the text being difficult also rises. These insightful pair plots also hint at the potential for further exploration of additional features in our analysis.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/New%20features%20pairplot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/New%20features%20pairplot.jpg"/>
 
 Heatmaps are renowned for their ability to provide clear insights into the correlation among different features in our dataset. Notably, we observe an inverse relationship between word length and the target variable, indicating that shorter words tend to correspond to higher difficulty scores. Similarly, there is a similar inverse relationship between lemma length and the target variable. Furthermore, as previously discussed, the number of sentences exhibits a direct relationship with the difficulty of texts, emphasizing that a higher sentence count often signifies increased difficulty.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/heatmap%20correlation.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/heatmap%20correlation.jpg"/>
 
 Examining the scatterplot depicting the relationship between the target variable and the number of sentences, we observe a discernible, albeit moderate, positive association. This suggests that the number of sentences in a text has a certain degree of influence on its difficulty. Although the correlation is not particularly strong, it can still contribute to the predictive performance of our models.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/scatterplot%20sentences%20target.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/scatterplot%20sentences%20target.jpg"/>
 
 Upon analyzing the preprocessed_essay_length and num_of_lemmas features, a robust correlation between them becomes evident. This strong positive correlation is further supported by the heatmap displayed earlier, reinforcing the relationship between these two features.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/scatterplot%20essay_length%20num_of_lemmas.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/scatterplot%20essay_length%20num_of_lemmas.jpg"/>
 
 The feature text_shortage exhibits a direct positive relationship with word_length. This observation suggests that longer words often undergo a reduction or shortening process, such as lemmatization or stemming, resulting in the creation of shorter word forms.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/scatterplot%20text_shortage%20word_length.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/scatterplot%20text_shortage%20word_length.jpg"/>
 
 ## Results
 
@@ -97,35 +97,35 @@ To assess the model's performance on the test data, we will generate graphs that
 
 [__Neural Networks:__](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html) Neural network models are capable of extracting intricate patterns from the data and identifying significant features with predictive potential. Generally, these models exhibit commendable performance in accurately predicting the difficulty of text. However, there are instances where the predictions deviate significantly from the expected values, either overestimating or underestimating the difficulty. To ensure the accuracy of our predictions, we may explore alternative models and conduct thorough testing.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Neural%20network%20predictions.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Neural%20network%20predictions.jpg"/>
 
 [__K Neighbors Regression:__](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html) This model relies on the previously defined total neighbors to accomplish the regression task of predicting text difficulty. However, there is a higher degree of dispersion compared to the neural networks we have previously trained and established.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/K%20neighbors%20regression%20predictions.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/K%20neighbors%20regression%20predictions.jpg"/>
 
 [__PLS Regression:__](https://scikit-learn.org/stable/modules/generated/sklearn.cross_decomposition.PLSRegression.html) The approach utilized here is Partial Least Squares (PLS) regression, which combines principal component analysis (PCA) with multiple linear regression to make predictions. The performance of this model closely resembles that of neural networks. Nevertheless, when compared to neural networks, there is a slightly higher level of variability in the results obtained using this approach.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/PLS%20regression%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/PLS%20regression%20plot.jpg"/>
 
 [__Decision Tree Regression:__](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html) Despite its capability to capture important distinctions and insights, the decision tree regressor did not exhibit the same level of performance as the other models we previously tested. This highlights the importance of not relying solely on a limited set of models for all machine learning tasks, as the effectiveness of a model often depends on the specific dataset used for prediction.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Decision%20tree%20regression%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Decision%20tree%20regression%20plot.jpg"/>
 
 [__Gradient Boosted Decision Tree Regression:__](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html) Among the models we have examined, this method demonstrates inferior performance compared to the others. The neural network architecture stands out as the top performer, exhibiting a greater capability to accurately predict text difficulty.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Gradient%20boosted%20decision%20tree%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Gradient%20boosted%20decision%20tree%20plot.jpg"/>
 
 After careful evaluation, we have selected the neural network architecture we previously defined due to its exceptional performance. Moreover, we employed the word2vec approach for text encoding. A graph depicting the mean squared error demonstrates a gradual reduction with each epoch executed on the neural network. Although there is a slight indication of overfitting, overall, the model is delivering satisfactory results.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Neural%20network%20word%20to%20vec%20loss%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Neural%20network%20word%20to%20vec%20loss%20plot.jpg"/>
 
 Presented below is a comparable graph illustrating the performance of a model utilizing the TFIDF word2vec approach, which differs from the previous graph that solely employed word2vec. Notably, the TFIDF word2vec approach demonstrates superior overall performance, as evidenced by the graph. The improved results indicate that incorporating TFIDF enhances the model's predictive capabilities.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Neural%20network%20tfidf%20loss%20plot.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Neural%20network%20tfidf%20loss%20plot.jpg"/>
 
 The final predictions obtained from the best model, utilizing the optimal encoding strategies for the text, exhibit reduced scatter when compared to the actual data. This indicates a substantial improvement in performance compared to the baseline models. The tighter alignment between predictions and actual data highlights the effectiveness of the chosen model and encoding strategies.
 
-<img src = "https://github.com/suhasmaddali/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/main/images/Neural%20network%20predictions%20last.jpg"/>
+<img src = "https://github.com/sankethkaruturi/Predicting-Readability-of-Texts-Using-Machine-Learning/blob/f76e47e96f3490384b471d9ecafa997bee37977e/images/Neural%20network%20predictions%20last.jpg"/>
 
 ## Outcomes
 * __TFIDF Word2Vec__ Vectorizer was the best encoding technique which results in a significant reduction in the __mean absolute error__ and __mean squared error__ respectively. 
